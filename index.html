@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Spin Wheel Example - Multiple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" href="data:image/x-icon;," type="image/x-icon">
+  <link rel="stylesheet" href="./index.css"/>
+  <script src="./index.js" type="module"></script>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Spin for Tonight's Restaurant</h1>
+      <p>Let the wheel choose from our favorite local restaurants when indecision strikes.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="gui-wrapper card">
+      <h2>How it works</h2>
+      <p>Tap spin and watch the wheel pick a dinner spot. No more endless scrolling through delivery apps.</p>
+      <button class="btn-spin">Spin the wheel</button>
+
+      <div class="selection">
+        <p class="selection-label">Selected: <span class="selection-name">Spin to choose</span></p>
+        <button class="btn-accept" type="button" disabled>Accept pick</button>
+      </div>
+
+      <h3>Featured restaurants</h3>
+      <div class="add-restaurant">
+        <label for="restaurant-input">Add a restaurant</label>
+        <div class="input-row">
+          <input id="restaurant-input" type="text" placeholder="Enter name" autocomplete="off"/>
+          <button class="btn-add" type="button">Add</button>
+        </div>
+      </div>
+      <div class="data-controls">
+        <button class="btn-export" type="button">Export data</button>
+        <button class="btn-import" type="button">Import data</button>
+        <input class="import-input" type="file" accept="application/json" aria-hidden="true"/>
+      </div>
+      <ul class="restaurant-list">
+        <li>Sunset Bistro</li>
+        <li>Harvest &amp; Hearth</li>
+        <li>Neon Noodle Bar</li>
+        <li>Plaza Taqueria</li>
+        <li>The Garden Table</li>
+        <li>Blue Harbor Sushi</li>
+        <li>Midnight Curry House</li>
+        <li>Cedar Smoke BBQ</li>
+      </ul>
+
+      <h3>Accepted picks</h3>
+      <ul class="picked-list"></ul>
+    </section>
+
+    <section class="wheel-wrapper card" aria-live="polite">
+      <div class="wheel-stage" aria-hidden="true">
+        <div class="wheel-1"></div>
+        <svg viewBox="0 0 100 100">
+          <polygon fill="currentColor" points="50 3, 52 0.3, 48 0.3"/>
+          <line stroke="currentColor" stroke-width="0.5" x1="50" x2="50" y1="0.3" y2="50" />
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with 🍽️ and chance.</p>
+  </footer>
+</body>
+
+</html>
